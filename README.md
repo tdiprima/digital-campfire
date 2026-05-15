@@ -1,9 +1,9 @@
 # digital-campfire
-Need to unwind? 😌 
+### Need to unwind? 😌 
 
 Here's a "digital campfire" app
 
-* fake CRT vibes
+* CRT (Cathode Ray Tube) vibes
 * rain sounds
 * terminal glow
 * rotating quotes/logs/poetry
