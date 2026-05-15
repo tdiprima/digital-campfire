@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>digital campfire</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="crt">
+    <div id="scanlines"></div>
+    <div id="flicker"></div>
+    <div id="screen">
+      <div id="glow-overlay"></div>
+
+      <header id="header">
+        <span class="dim">┌─── </span>
+        <span class="phosphor">digital campfire</span>
+        <span class="dim"> ───┐</span>
+      </header>
+
+      <main id="content">
+        <div id="text-area">
+          <p id="prompt" class="dim">&gt; _</p>
+          <p id="message" class="fade-in"></p>
+          <p id="attribution" class="dim fade-in"></p>
+        </div>
+      </main>
+
+      <footer id="status-bar">
+        <span id="clock" class="dim"></span>
+        <span id="rain-status" class="dim">rain: listening</span>
+        <button id="sound-toggle" class="dim" aria-label="Toggle ambient sound">
+          &#9835; unmute
+        </button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
