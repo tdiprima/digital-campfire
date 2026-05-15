@@ -1,6 +1,8 @@
 # digital-campfire
 ### Need to unwind? 😌 
 
+![digital-campfire](./assets/campfire-1.jpg)
+
 Here's a "digital campfire" app
 
 * CRT (Cathode Ray Tube) vibes
