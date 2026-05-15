@@ -6,7 +6,7 @@ Here's a "digital campfire" app
 * CRT (Cathode Ray Tube) vibes
 * rain sounds
 * terminal glow
-* rotating quotes/logs/poetry
+* rotating quotes/poetry
 * tiny safe corner for your brain
 
 
@@ -21,6 +21,8 @@ bandpass filters, distant thunder on random intervals
 Open index.html in a browser. Click **♫ unmute** in the bottom-right to start the rain. Text cycles every 18
 seconds with a slow typewriter fade. Thunder rolls in every 15–60 seconds, barely there — just enough to
 notice.
+
+---
 
 No dependencies, no build step, no external audio files. Everything is self-contained.
 
