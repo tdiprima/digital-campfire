@@ -1,5 +1,7 @@
 # digital-campfire
-A "digital campfire" app
+Need to unwind? 😌 
+
+Here's a "digital campfire" app
 
 * fake CRT vibes
 * rain sounds
