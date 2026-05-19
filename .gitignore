@@ -35,3 +35,5 @@ logs/
 # Shell history / debug
 .bash_history
 .zsh_history
+
+.codegraph/
