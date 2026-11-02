@@ -233,7 +233,7 @@ function playThunder(context) {
   const statusElement = document.getElementById("rain-status");
   statusElement.textContent = "rain: thunder nearby";
   setTimeout(() => {
-    statusElement.textContent = "rain: listening";
+    if (isAudioPlaying) statusElement.textContent = "rain: listening";
   }, duration * 1000);
 }
 
@@ -247,6 +247,7 @@ function toggleAudio() {
   if (isAudioPlaying) {
     if (rainGainNode) {
       rainGainNode.gain.cancelScheduledValues(audioContext.currentTime);
+      rainGainNode.gain.setValueAtTime(rainGainNode.gain.value, audioContext.currentTime);
       rainGainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 2);
     }
     if (thunderTimeout) {
@@ -268,6 +269,7 @@ function toggleAudio() {
     if (rainGainNode) {
       // graph already built; fade back in instead of stacking a second one
       rainGainNode.gain.cancelScheduledValues(audioContext.currentTime);
+      rainGainNode.gain.setValueAtTime(rainGainNode.gain.value, audioContext.currentTime);
       rainGainNode.gain.linearRampToValueAtTime(0.12, audioContext.currentTime + 3);
       scheduleThunder(audioContext);
     } else {
