@@ -41,6 +41,7 @@ let audioContext = null;
 let isAudioPlaying = false;
 let rainGainNode = null;
 let thunderTimeout = null;
+let suspendTimeout = null;
 
 function updateClock() {
   const now = new Date();
@@ -244,6 +245,9 @@ function toggleAudio() {
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
   }
 
+  // any pending suspend belongs to a previous toggle; drop it
+  clearTimeout(suspendTimeout);
+
   if (isAudioPlaying) {
     if (rainGainNode) {
       rainGainNode.gain.cancelScheduledValues(audioContext.currentTime);
@@ -253,7 +257,7 @@ function toggleAudio() {
     if (thunderTimeout) {
       clearTimeout(thunderTimeout);
     }
-    setTimeout(() => {
+    suspendTimeout = setTimeout(() => {
       if (audioContext && !isAudioPlaying) {
         audioContext.suspend();
       }
