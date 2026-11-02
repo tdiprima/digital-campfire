@@ -244,6 +244,7 @@ function toggleAudio() {
 
   if (isAudioPlaying) {
     if (rainGainNode) {
+      rainGainNode.gain.cancelScheduledValues(audioContext.currentTime);
       rainGainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 2);
     }
     if (thunderTimeout) {
@@ -262,7 +263,14 @@ function toggleAudio() {
     if (audioContext.state === "suspended") {
       audioContext.resume();
     }
-    startRain(audioContext);
+    if (rainGainNode) {
+      // graph already built; fade back in instead of stacking a second one
+      rainGainNode.gain.cancelScheduledValues(audioContext.currentTime);
+      rainGainNode.gain.linearRampToValueAtTime(0.12, audioContext.currentTime + 3);
+      scheduleThunder(audioContext);
+    } else {
+      startRain(audioContext);
+    }
     isAudioPlaying = true;
     toggleButton.textContent = "♫ mute";
     toggleButton.classList.add("active");
