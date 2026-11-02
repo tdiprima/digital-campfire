@@ -105,6 +105,8 @@ async function displayFragment(fragment) {
   const attributionElement = document.getElementById("attribution");
   const promptElement = document.getElementById("prompt");
 
+  messageElement.classList.remove("fading-in");
+  attributionElement.classList.remove("fading-in");
   messageElement.classList.add("fading-out");
   attributionElement.classList.add("fading-out");
 
