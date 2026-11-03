@@ -3,8 +3,6 @@
 
 ![digital-campfire demo](./assets/campfire.gif)
 
-Here's a "digital campfire" app
-
 * CRT (Cathode Ray Tube) vibes
 * rain sounds
 * terminal glow
